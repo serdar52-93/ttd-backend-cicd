@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh ''' 
                 docker stop ttd-backend || true
-               // docker rm -f ttd-backend || true 
+                docker rm -f ttd-backend || true 
                 docker run -p5000:5000 -d --name ttd-backend serdar52/ttd-backend:jenkins-${BUILD_NUMBER}
                 '''
                 }
